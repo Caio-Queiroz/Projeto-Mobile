@@ -28,42 +28,85 @@ h1 {
     margin-top: 20px;
 }
 
-.square-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+.impact-phrase {
+    font-family:Georgia, 'Times New Roman', Times, serif; 
+    font-size: 24px; 
+    font-weight: bold; 
+    color: #041b5a; 
+    
+    margin-top: 30px; 
+}
+
+.login-wrapper {
+    width: 18%; 
+    margin: 0 auto; 
+}
+
+.login-form {
     margin-top: 20px;
 }
 
-.square {
-    background-color: #66cdaa;
-    padding: 40px;
-    border-radius: 10px;
-    transition: background-color 0.3s ease-in-out;
+.input-field {
+    width: 100%; 
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
-.square:hover {
-    background-color: #3cb371;
+.forgot-password {
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+    text-align: left;
 }
 
-.square h2 {
-    margin: 0;
-    color: #fff;
+.button-enter button {
+    width: 150px; 
+    height: 50px; 
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 10px; 
+    outline: none; 
 }
 
-/* Responsividade */
+.button-enter button:hover {
+    background-color: #45a049; 
+}
+.footer {
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+/* Hora da mágica */
+
+
+
 @media only screen and (max-width: 768px) {
-    .square-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .square {
-        padding: 20px;
+    .login-wrapper {
+        width: 80%; 
     }
 }
+
 
 @media only screen and (max-width: 480px) {
-    .square-container {
-        grid-template-columns: 1fr;
+    .login-wrapper {
+        width: 90%; 
+    }
+
+    .input-field {
+        width: 100%; 
+    }
+
+    .button-enter button {
+        width: 100%; 
     }
 }
