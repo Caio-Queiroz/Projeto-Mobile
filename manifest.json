@@ -1,0 +1,34 @@
+{
+"name": "FixLab",
+"short_name": "FixLab",
+"icons": [
+
+    {
+        "src": "images/class.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any maskable"
+
+        
+    },
+    {
+        "src": "images/appstore.png",
+        "sizes": "1024x1024",
+        "type": "image/png",
+        "purpose": "any maskable"
+
+    },
+    {
+        "src": "images/playstore.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any maskable"
+
+    }
+],
+
+"start_url": "index.html",
+"display": "standalone",
+"background_color": "#FFFFFF",
+"theme_color": "#035E03"
+}

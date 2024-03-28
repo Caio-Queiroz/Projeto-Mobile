@@ -4,20 +4,49 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0>
+    <meta name="description" content="WebApp exclusivo para alunos do Senac, permitindo tirar fotos de equipamentos de laboratório com facilidade para solicitar reparos.">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="images/class.jpeg">
+    <link rel="icon" type="image/png" href="\images/class.png">
+    <!--Realizar um pré-carregamento do google maps-->
+    <link rel="preconnect" href="https://maps.googleapis.com">
+    <link rel="preconnect" href="https://maps.gstatic.com">
+    
     <title>Fix Lab</title>
+
+            <!--PWA-->
+            <link rel="manifest" href="manifest.json">
+            <meta name="description" content="PWA-teste">
+            <meta name="mobile-web-app-capable" content="yes">
+            <meta name="msapplication-TileImage" content="images/class.png">
+            <meta name="msapplication-TileColor" content="#FFFFFF">
+            <link rel="shortcut icon" sizes="192x192" href="\images/class.png"> <!--mobile-->
+            <link rel="shortcut icon" sizes="128x128" href="\images/class.png  ">
+            <meta name="theme-color" content="#FFFFFF">
+
+            <!--Esse é específico para dispositivos apple-->
+            <meta name="apple-mobile-web-app-capable" content="yes">
+            <meta name="apple-mobile-web-app-status-bar-style" content="black">
+            <meta name="apple-mobile-web-app-title" content="FixLab">
+            <link rel="apple-touch-icon" href="touch-icon-iphone.png">
+            <link rel="apple-touch-icon" sizes="152x152" href="\images/class.png">
+            <link rel="apple-touch-icon" sizes="167x167" href="\images/class.png">
+
+            <!--ícone para android-->
+            <link rel="icon" type="image/png" sizes="192x192" href="\images\playstore.png">
+            <!--ícone para apple-->
+            <link rel="apple-touch-icon" sizes="180x180" href="\images\appstore.png">
 </head>
 
 <body>
     <div class="container">
         <div class="background-image">
-            <!--Imagem do Senac-->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.4785886376044!2d-34.887765289815235!3d-8.052565391941377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1997eb26b1bb%3A0x38559aaa17ddef7c!2sFaculdade%20Senac%20Pernambuco!5e0!3m2!1spt-BR!2sbr!4v1711409242920!5m2!1spt-BR!2sbr" width="100%" height="50vh" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localização Senac"></iframe>
+           
         </div>
 
         <div class="logo-container">
-            <img src="images/class.jpeg" alt="Logo do App">
+            <img src="\images\class.png" alt="Logo do App">
         </div>
 
         <h1>Fix Lab</h1>
@@ -39,9 +68,32 @@
         </div>
         
         <div class="footer">
-            <p>Informações: <a href="#">Central de Ajuda</a> | <a href="#">Termos de Uso</a> | <a href="#">Políticas de Privacidade</a> | <a href="#">Canal de Contato LGPD</a></p>
+            <p>Informações: <a href="...">Central de Ajuda</a> | <a href="...">Termos de Uso</a> | <a href="...">Políticas de Privacidade</a> | <a href="...">Canal de Contato LGPD</a></p>
+        </div>
+        <div class="contact-button">
+            <a href="mailto:secfacsenac@gmail.com">Suporte</a>
         </div>
     </div>
+
+        <!--Script para registrar o ServiceWorker no projeto-->
+        <script>
+
+        let newWorker;
+        if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js').then(reg => { 
+        reg.addEventListener('updatefound', () => {
+        newWorker = reg.installing; });
+        });
+
+        let refreshing;
+        navigator.serviceWorker.addEventListener('controllerchange', function () {
+        if (refreshing) return;
+        window.location.reload();
+        refreshing = true;
+        });
+        }
+
+        </script>
 </body>
 
 </html>
